@@ -1,0 +1,20 @@
+{
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["PaymentID", "MethodPayment", "DatePayment"],
+        "properties": {
+            "PaymentID": {
+                "bsonType": "string",
+                "description": "PaymentID phải là chuỗi và bắt buộc"
+            },
+            "MethodPayment": {
+                "bsonType": "string",
+                "description": "Phương thức thanh toán phải là chuỗi và bắt buộc"
+            },
+            "DatePayment": {
+                "bsonType": "date",
+                "description": "Ngày thanh toán phải là kiểu ngày và bắt buộc"
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["OrderID", "OrderDate", "TotalPrices", "CustomerID", "ShoppingCartID"],
+        "properties": {
+            "OrderID": {
+                "bsonType": "string",
+                "description": "OrderID phải là chuỗi và bắt buộc"
+            },
+            "OrderDate": {
+                "bsonType": "date",
+                "description": "OrderDate phải là kiểu ngày và bắt buộc"
+            },
+            "TotalPrices": {
+                "bsonType": "number",
+                "description": "TotalPrices phải là số và bắt buộc"
+            },
+            "StatusOrder": {
+                "enum": ["Pending", "Paid", "Cancelled"],
+                "description": "StatusOrder phải thuộc một trong các giá trị quy định"
+            },
+            "VoucherID": {
+                "bsonType": "string",
+                "description": "VoucherID nếu có thể là chuỗi"
+            },
+            "CustomerID": {
+                "bsonType": "string",
+                "description": "CustomerID phải là chuỗi và bắt buộc"
+            },
+            "ShoppingCartID": {
+                "bsonType": "string",
+                "description": "ShoppingCartID phải là chuỗi và bắt buộc"
+            },
+            "PaymentID": {
+                "bsonType": "string",
+                "description": "PaymentID nếu có thể là chuỗi"
+            }
+        }
+    }
+}
