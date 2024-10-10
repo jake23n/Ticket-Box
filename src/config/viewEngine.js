@@ -12,8 +12,9 @@ const configViewEngine = (app) => {
     // HTTP logger
     app.use(morgan('combined'));
 
+    
     // Cấu hình file tĩnh
-    app.use(express.static(path.join(__dirname, '../public'))); 
+    app.use(express.static(path.join(__dirname, '../views'))); 
 };
 
 module.exports = configViewEngine;
