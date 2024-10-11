@@ -3,3 +3,6 @@ node_modules
 .env
 package.txt
 theory.txt
+DB_template.txt
+ProductBacklog.txt
+schemaTutorial.txt

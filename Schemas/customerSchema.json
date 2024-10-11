@@ -12,7 +12,7 @@
                 "description": "Tên khách hàng phải là chuỗi và bắt buộc"
             },
             "Gender": {
-                "enum": ["Male", "Female", "Other"],
+                "enum": ["Male", "Female"],
                 "description": "Giới tính của khách hàng"
             },
             "DOB": {

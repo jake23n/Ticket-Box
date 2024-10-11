@@ -1,0 +1,43 @@
+1. Tạo Product Roadmap
+Product Roadmap là bản kế hoạch tổng quan, mô tả các giai đoạn phát triển của dự án. Bạn có thể chia dự án thành các giai đoạn lớn:
+
+Phase 1 (Sep 19 - Early Oct): User Management & Authentication
+Đăng ký, đăng nhập, quên mật khẩu, cập nhật thông tin cá nhân.
+Phase 2 (Oct): Event & Ticket Management
+Tạo sự kiện, quản lý vé, tìm kiếm, lọc vé.
+Phase 3 (Mid Oct): Shopping Cart & Payment
+Tích hợp thanh toán, giỏ hàng, xuất hóa đơn.
+Phase 4 (Nov): Notifications & Order History
+Quản lý thông báo, lịch sử mua vé, quản lý đơn hàng.
+Phase 5 (Dec): Vouchers, Analytics, and Chat Features
+Quản lý voucher, thống kê top tìm kiếm, tích hợp chatbox.
+Phase 6 (Late Dec - Jan): Admin & Final Touches
+Tính năng dành cho Admin (quản lý sự kiện, vé, gửi thông báo), kiểm thử và hoàn thiện hệ thống.
+2. Chia thành Sprint (2-4 tuần)
+Dựa vào Product Roadmap, bạn chia dự án thành các Sprint. Mỗi Sprint có thể kéo dài 2-4 tuần, và mỗi sprint sẽ tập trung vào một số chức năng chính.
+
+Sprint 1 (19/09 - 03/10):
+
+Tạo và hoàn thiện chức năng đăng ký, đăng nhập, quên mật khẩu.
+Tạo cơ sở dữ liệu và bảng người dùng.
+Sprint 2 (04/10 - 17/10):
+
+Quản lý sự kiện và vé (tạo sự kiện, quản lý thông tin vé).
+Tìm kiếm và lọc vé.
+Sprint 3 (18/10 - 31/10):
+
+Tích hợp giỏ hàng và thanh toán.
+Tạo mã QR và xuất hóa đơn.
+Sprint 4 (01/11 - 14/11):
+
+Thông báo người dùng, lịch sử mua vé.
+Gửi email nhắc nhở sự kiện, chương trình khuyến mãi.
+Sprint 5 (15/11 - 28/11):
+
+Quản lý voucher, thống kê top tìm kiếm.
+Gợi ý sự kiện dựa trên lịch sử và địa điểm.
+Sprint 6 (29/11 - 04/01/2025):
+
+Tính năng chat với AI và admin.
+Tính năng quản lý của Admin.
+Tinh chỉnh và kiểm thử toàn hệ thống.
