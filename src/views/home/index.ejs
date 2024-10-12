@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <!-- <img src="/images/image.png" alt=""> -->
+    <h1>This is home page</h1>
+    <% if (data) { %>
+        <%= data %>
+    <% } else { %>
+        <p>No data available</p>
+    <% } %>
+    <h2></h2>
+    <button>Click to call API</button>
+</body>
+<script>
+    const linkNode = document.querySelector('button');
+    linkNode.addEventListener('click', () => {
+        fetch('https://dogapi.dog/api/v2/breeds')
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res)
+                const textNode = document.querySelector('h2');
+                textNode.textContent = res.data[0].attributes.description;
+            });
+    });
+</script>
+</html>
