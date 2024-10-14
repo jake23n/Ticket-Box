@@ -1,44 +1,47 @@
 {
-    "$jsonSchema": {
-        "bsonType": "object",
-        "required": ["VoucherID", "VoucherName", "Discount", "MaxDiscount", "Condition", "StartDate", "EndDate", "Quantity", "Status"],
-        "properties": {
-            "VoucherID": {
-                "bsonType": "string",
-                "description": "VoucherID phải là chuỗi và bắt buộc"
-            },
-            "VoucherName": {
-                "bsonType": "string",
-                "description": "Tên voucher phải là chuỗi và bắt buộc"
-            },
-            "Discount": {
-                "bsonType": "number",
-                "description": "Giảm giá phải là số và bắt buộc"
-            },
-            "MaxDiscount": {
-                "bsonType": "number",
-                "description": "Giảm giá tối đa phải là số"
-            },
-            "Condition": {
-                "bsonType": "string",
-                "description": "Điều kiện áp dụng voucher"
-            },
-            "StartDate": {
-                "bsonType": "date",
-                "description": "Ngày bắt đầu phải là kiểu ngày và bắt buộc"
-            },
-            "EndDate": {
-                "bsonType": "date",
-                "description": "Ngày kết thúc phải là kiểu ngày và bắt buộc"
-            },
-            "Quantity": {
-                "bsonType": "number",
-                "description": "Số lượng voucher phải là số và bắt buộc"
-            },
-            "Status": {
-                "enum": ["Active", "Inactive"],
-                "description": "Trạng thái voucher phải thuộc một trong các giá trị quy định"
-            }
-        }
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["VoucherID", "VoucherName", "Discount", "MaxDiscount", "Condition", "StartDate", "EndDate", "Quantity", "Status"],
+    "properties": {
+      "VoucherID": {
+        "type": "string",
+        "description": "VoucherID phải là chuỗi và bắt buộc"
+      },
+      "VoucherName": {
+        "type": "string",
+        "description": "Tên voucher phải là chuỗi và bắt buộc"
+      },
+      "Discount": {
+        "type": "number",
+        "description": "Giảm giá phải là số và bắt buộc"
+      },
+      "MaxDiscount": {
+        "type": "number",
+        "description": "Giảm giá tối đa phải là số"
+      },
+      "Condition": {
+        "type": "string",
+        "description": "Điều kiện áp dụng voucher"
+      },
+      "StartDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Ngày bắt đầu phải là kiểu ngày và bắt buộc"
+      },
+      "EndDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Ngày kết thúc phải là kiểu ngày và bắt buộc"
+      },
+      "Quantity": {
+        "type": "number",
+        "description": "Số lượng voucher phải là số và bắt buộc"
+      },
+      "Status": {
+        "type": "string",
+        "enum": ["Active", "Inactive"],
+        "description": "Trạng thái voucher phải thuộc một trong các giá trị quy định"
+      }
     }
-}
+  }
+  

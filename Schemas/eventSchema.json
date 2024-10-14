@@ -1,40 +1,43 @@
 {
-    "$jsonSchema": {
-        "bsonType": "object",
-        "required": ["EventID", "StartDate", "EndDate", "Description", "Address", "QuantityOfVisits", "Category", "Status"],
-        "properties": {
-            "EventID": {
-                "bsonType": "string",
-                "description": "EventID phải là chuỗi và bắt buộc"
-            },
-            "StartDate": {
-                "bsonType": "date",
-                "description": "StartDate phải là kiểu ngày và bắt buộc"
-            },
-            "EndDate": {
-                "bsonType": "date",
-                "description": "EndDate phải là kiểu ngày và bắt buộc"
-            },
-            "Description": {
-                "bsonType": "string",
-                "description": "Mô tả sự kiện phải là chuỗi và bắt buộc"
-            },
-            "Address": {
-                "bsonType": "string",
-                "description": "Địa chỉ sự kiện phải là chuỗi và bắt buộc"
-            },
-            "VisitCount": {
-                "bsonType": "number",
-                "description": "Số lượng người tham gia"
-            },
-            "Category": {
-                "bsonType": "string",
-                "description": "Thể loại của sự kiện"
-            },
-            "Status": {
-                "enum": ["Active", "Inactive"],
-                "description": "Trạng thái sự kiện phải thuộc một trong các giá trị quy định"
-            }
-        }
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["EventID", "StartDate", "EndDate", "Description", "Address", "VisitCount", "Category", "Status"],
+    "properties": {
+      "EventID": {
+        "type": "string",
+        "description": "EventID phải là chuỗi và bắt buộc"
+      },
+      "StartDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "StartDate phải là kiểu ngày và bắt buộc"
+      },
+      "EndDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "EndDate phải là kiểu ngày và bắt buộc"
+      },
+      "Description": {
+        "type": "string",
+        "description": "Mô tả sự kiện phải là chuỗi và bắt buộc"
+      },
+      "Address": {
+        "type": "string",
+        "description": "Địa chỉ sự kiện phải là chuỗi và bắt buộc"
+      },
+      "VisitCount": {
+        "type": "number",
+        "description": "Số lượng người tham gia"
+      },
+      "Category": {
+        "type": "string",
+        "description": "Thể loại của sự kiện"
+      },
+      "Status": {
+        "type": "string",
+        "enum": ["Active", "Inactive"],
+        "description": "Trạng thái sự kiện phải thuộc một trong các giá trị quy định"
+      }
     }
-}
+  }
+  
