@@ -21,60 +21,77 @@
         <header class="header">
             <div class="top">
                 <div class="top__left">
-                    <img id="logo" src="./assets/img/logo.png" >
-                    <h1 id= "title">Ticket Box</h2>
+                    <img id="logo" src="./assets/img/logo.png" alt="Logo">
+                    <h1 id="title">Ticket Box</h1>
                 </div>
                 <div class="top__right">
-                    <button class="top__right__item">Log in</button>
-                    <button class="top__right__item">Sign up</button>
+                    <img class="header__account" onclick="toggleDropdown()" src="https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png" alt="Account">
+                    <ul class="account__options">
+                        <li class="account__options__items">Profile</li>
+                        <li class="account__options__items">Settings</li>
+                        <li class="account__options__items">Logout</li>
+                    </ul>
                 </div>         
             </div>
-            <nav id ="navbar">
-                <button  class="navbar__item">Home</button>
-                <button  class="navbar__item">Music</button>
-                <button  class="navbar__item">Performance & Art</button>
-                <button  class="navbar__item">Others</button>
+            <nav id="navbar">
+                <button class="navbar__item">Home</button>
+                <button class="navbar__item">Music</button>
+                <button class="navbar__item">Performance & Art</button>
+                <button class="navbar__item">Others</button>
             </nav>
         </header>
+
         <main class="container">
-            <div id="hotEvent">
+            <section id="hotEvent">
                 <h3 class="suggest_title">Sự kiện hot gần đây</h3>
                 <div class="scollbar">
-                    <img class="event__poster event__poster--top" src="https://salt.tkbcdn.com/ts/ds/38/f6/ef/afb1d3c8ef2492054ae52fee6e5aa30c.png" alt="Ảnh poster" >
-                    <img class="event__poster event__poster--top" src="https://salt.tkbcdn.com/ts/ds/38/f6/ef/afb1d3c8ef2492054ae52fee6e5aa30c.png" alt="Ảnh poster" >
+                    <img class="event__poster event__poster--top" src="https://salt.tkbcdn.com/ts/ds/38/f6/ef/afb1d3c8ef2492054ae52fee6e5aa30c.png" alt="Poster">
+                    <img class="event__poster event__poster--top" src="https://salt.tkbcdn.com/ts/ds/38/f6/ef/afb1d3c8ef2492054ae52fee6e5aa30c.png" alt="Poster">
                 </div>
-            </div>
-            <div id="monthEvent">
+            </section>
+
+            <section id="monthEvent">
                 <h3 class="suggest_title">Sự kiện tháng này</h3>
                 <div class="scollbar">
-                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Ảnh poster" >
-                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Ảnh poster" >
-                    
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
                 </div>
-            </div>
-            <div id="nearbyEvent">
+            </section>
+
+            <section id="nearbyEvent">
                 <h3 class="suggest_title">Sự kiện gần bạn</h3>
                 <div class="scrollbar">
-                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Ảnh poster" >
-                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Ảnh poster" >
-                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Ảnh poster" >
-                    
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
                 </div>
-            </div>
-            <div id="workshopEvent">
+            </section>
+
+            <section id="workshopEvent">
                 <h3 class="suggest_title">Work Shop hấp dẫn</h3>
                 <div class="scrollbar">
-                    <img class="event__poster" src="https://ticketgo.vn/uploads/images/event-logo/event_logo-5849458c1df721c42378042f72ea9dc7.jpg" alt="Ảnh poster" >
-                    <img class="event__poster" src="https://ticketgo.vn/uploads/images/event-logo/event_logo-a09314f3a7868d8f807a345d69f17759.jpg" alt="Ảnh poster" >
-                    
+                    <img class="event__poster" src="https://ticketgo.vn/uploads/images/event-logo/event_logo-5849458c1df721c42378042f72ea9dc7.jpg" alt="Workshop Poster">
+                    <img class="event__poster" src="https://ticketgo.vn/uploads/images/event-logo/event_logo-a09314f3a7868d8f807a345d69f17759.jpg" alt="Workshop Poster">
                 </div>
-            </div>
+            </section>
         </main>
-        <footer class="footer">
-    
-        </footer>
 
+        <footer class="footer"></footer>
     </div>
-    
+
+    <script>
+        function toggleDropdown() {
+            const options = document.querySelector('.account__options');
+            options.style.display = options.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function (event) {
+            const accountContainer = document.querySelector('.top__right');
+            const options = document.querySelector('.account__options');
+            if (!accountContainer.contains(event.target)) {
+                options.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
