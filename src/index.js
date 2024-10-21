@@ -1,32 +1,39 @@
-import express from 'express'
-import homeRouter from './routes/home.route.js'
-import cartRouter from './routes/cart.route.js'
-import configViewEngine from './config/viewEngine.js'
-import dotenv from 'dotenv'
+// main.js or app.js
+import express from 'express';
+import session from 'express-session';
+import connectDB from './db.js';
+import homeRouter from './routes/home.route.js';
+import cartRouter from './routes/cart.route.js';
+import configViewEngine from './config/viewEngine.js';
+import dotenv from 'dotenv';
+import loginRouter from './routes/login.route.js'; 
 
-dotenv.config()
+dotenv.config();
 
-const app = express()
+const app = express();
+const port = process.env.PORT;
 
-const port = process.env.PORT || 8081
+// Connect to MongoDB
+connectDB();
 
+// Middlewares
+app.use(express.urlencoded({ extended: true })); // For parsing form data
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'your_secret_key',
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(express.json()); // Để xử lý dữ liệu JSON
 
+// View engine
+configViewEngine(app);
 
-// engine 
-configViewEngine(app)
-// route 
-//tất cả routes đứng sau / 
-app.use('/', homeRouter)
-app.use('/cart', cartRouter)
+// Routes
+app.use('/', homeRouter);
+app.use('/cart', cartRouter);
+app.use('/login', loginRouter); // Add the auth routes
 
-
-
-
-// lắng nghe thành công -> in ra console 
-// localhost - 127.0.0.1 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
-// ctrl c -> disconnect server
-
-
+// Start the server
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 

@@ -1,0 +1,125 @@
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* kích thước background login */
+    width: 496px;  /* Thiết lập chiều rộng */
+    height: 598px; /* Thiết lập chiều cao */
+}
+#Login{
+    margin: 0.5rem auto auto auto;
+}
+/* Lớp phủ mờ */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Ban đầu ẩn đi */
+}
+
+/* Hiển thị login khi kích hoạt */
+#Login.hidden,
+#overlay.hidden {
+    display: none;
+}
+
+#Login,
+#overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login {
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%; /* Để form chiếm toàn bộ chiều rộng của section */
+    height: 100%; /* Để form chiếm toàn bộ chiều cao của section */
+    
+    background-image: url('/images/login_background.png'); /* Đường dẫn tới hình nền */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Hoặc contain tùy theo yêu cầu */
+    border-radius: 20px; /* Nếu muốn bo góc */
+}
+
+.loginRegister-heading {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.inputBox {
+    position: relative;
+    margin: 1rem 0;
+    max-width: 300px;
+    border-bottom: 2px solid #000;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    outline: none;
+    color: #000;
+}
+
+.inputBox label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #000;
+    transition: 0.5s;
+}
+
+.inputBox input:focus + label,
+.inputBox input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 20px;
+}
+.Login .submitButton:hover{
+    background-color: rgba(245,245,245, 0.9)
+}
+.forget,
+.Login_Register {
+    font-size: 0.85rem;
+    color: #000;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.forget a,
+.Login_Register a {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
