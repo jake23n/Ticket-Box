@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/base.css">
-
+    <link rel="stylesheet" href="./css/login.css">
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
@@ -25,7 +25,7 @@
     <div class="app">
         <!-- Include the header -->
         <%- include('partials/header') %>
-    
+
         <!-- Main body content will go here -->
         <main class="container">
             <section id="hotEvent">
@@ -65,19 +65,9 @@
         <!-- Include the footer -->
         <%- include('partials/footer') %>
     </div>
-    <script>
-        function toggleDropdown() {
-            const options = document.querySelector('.account__options');
-            options.style.display = options.style.display === 'block' ? 'none' : 'block';
-        }
+    <script src="../js/menubar.profile.js"></script>
+    <script src="../js/login.js"></script>
 
-        document.addEventListener('click', function (event) {
-            const accountContainer = document.querySelector('.top__right');
-            const options = document.querySelector('.account__options');
-            if (!accountContainer.contains(event.target)) {
-                options.style.display = 'none';
-            }
-        });
-    </script>
+
 </body>
 </html>

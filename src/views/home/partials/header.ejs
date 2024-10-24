@@ -18,5 +18,41 @@
         <button class="navbar__item">Music</button>
         <button class="navbar__item">Performance & Art</button>
         <button class="navbar__item">Others</button>
+        <button class="navbar__item" type="button" id="loginBtn">Login</button>
     </nav>
+
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <h1 class="loginRegister-heading">Login</h1>
+            <form action="/" method="POST"> <!-- Ngăn gửi form -->
+                <div class="inputBox">
+                    <input type="text" class="username" placeholder="" required>
+                    <label for="username">Username</label>
+                </div>
+                
+                <div class="inputBox">
+                    <input 
+                        id="password"  
+                        type="password" 
+                        class="password" 
+                        placeholder="" 
+                        pattern="[0-9a-fA-F]{8,20}"   
+                        title="Enter an ID consisting of 8-20 hexadecimal digits"
+                        autocomplete="new-password"
+                        required
+                    >
+                    <label for="password">Password</label>
+                    <button type="button" id="togglePassword">Show</button>
+                </div>
+                <button type="submit" class="submitButton">Log In</button>
+            </form>
+            <div class="forget">
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="Login_Register">
+                <a href="#">Create an account</a>
+            </div>
+        </div>
+    </div>
 </header>
+
