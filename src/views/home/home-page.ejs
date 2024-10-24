@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Box</title>
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/variables.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="top">
+                <div class="top__left">
+                    <img id="logo" src="../images/logo.png" alt="Logo">
+                    <h1 id="title">Ticket Box</h1>
+                </div>
+                <div class="top__right">
+                    <img class="header__account" onclick="toggleDropdown()" src="https://cdn.icon-icons.com/icons2/2643/PNG/512/avatar_female_woman_person_people_white_tone_icon_159360.png" alt="Account">
+                    <ul class="account__options">
+                        <li class="account__options__items">Profile</li>
+                        <li class="account__options__items">Settings</li>
+                        <li class="account__options__items">Logout</li>
+                    </ul>
+                </div>         
+            </div>
+            <nav id="navbar">
+                <button class="navbar__item">Home</button>
+                <button class="navbar__item">Music</button>
+                <button class="navbar__item">Performance & Art</button>
+                <button class="navbar__item">Others</button>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section id="hotEvent">
+                <h3 class="suggest_title">Sự kiện hot gần đây</h3>
+                <div class="scollbar">
+                    <img class="event__poster event__poster--top" src="https://salt.tkbcdn.com/ts/ds/38/f6/ef/afb1d3c8ef2492054ae52fee6e5aa30c.png" alt="Poster">
+                    <img class="event__poster event__poster--top" src="https://salt.tkbcdn.com/ts/ds/38/f6/ef/afb1d3c8ef2492054ae52fee6e5aa30c.png" alt="Poster">
+                </div>
+            </section>
+
+            <section id="monthEvent">
+                <h3 class="suggest_title">Sự kiện tháng này</h3>
+                <div class="scollbar">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                </div>
+            </section>
+
+            <section id="nearbyEvent">
+                <h3 class="suggest_title">Sự kiện gần bạn</h3>
+                <div class="scrollbar">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                    <img class="event__poster" src="https://ticketbox.vn/_next/image?url=https%3A%2F%2Fimages.tkbcdn.com%2F2%2F360%2F479%2Fts%2Fds%2F86%2F50%2Fa1%2F5c12e67e7c6a7a5f3a76869635204c5a.jpg&w=1920&q=75" alt="Poster">
+                </div>
+            </section>
+
+            <section id="workshopEvent">
+                <h3 class="suggest_title">Work Shop hấp dẫn</h3>
+                <div class="scrollbar">
+                    <img class="event__poster" src="https://ticketgo.vn/uploads/images/event-logo/event_logo-5849458c1df721c42378042f72ea9dc7.jpg" alt="Workshop Poster">
+                    <img class="event__poster" src="https://ticketgo.vn/uploads/images/event-logo/event_logo-a09314f3a7868d8f807a345d69f17759.jpg" alt="Workshop Poster">
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer"></footer>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const options = document.querySelector('.account__options');
+            options.style.display = options.style.display === 'block' ? 'none' : 'block';
+        }
+
+        document.addEventListener('click', function (event) {
+            const accountContainer = document.querySelector('.top__right');
+            const options = document.querySelector('.account__options');
+            if (!accountContainer.contains(event.target)) {
+                options.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
