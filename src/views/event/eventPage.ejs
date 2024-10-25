@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Box</title>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/home-page.css" rel="stylesheet">
+    <link href="../css/var.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/event.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=calendar_today,location_on" />
+</head>
+<body>
+    <!-- Header -->
+    <div class="app">
+        <header class="header">
+            <div class="top">
+                <div class="top__left">
+                    <img id="logo" src="../images/logo.png" >
+                    <h1 id= "title">Ticket Box</h2>
+                </div>
+                <div class="top__right">
+                    <button class="top__right__item" type="button" onclick="CancelHidden()">Log in</button>
+                    <button class="top__right__item">Sign up</button>
+                </div>      
+                   
+            </div>
+            <!-- Che di nav bar -->
+            <nav id ="navbar" class="hidden-for-event">
+                <button  class="navbar__item">Home</button>
+                <button  class="navbar__item">Music</button>
+                <button  class="navbar__item">Performance & Art</button>
+                <button  class="navbar__item">Others</button>
+            </nav>
+            <section id="Login" class="hidden">
+                <div class="Login">
+                    <h1 class="loginRegister-heading">Login</h1>
+                    <!-- Thêm form với phương thức POST -->
+                    <form action="/login" method="POST">
+                        <div class="inputBox">
+                            <input type="text" name="username" class="username" placeholder="" required>
+                            <label for="username">Username</label>
+                        </div>
+                
+                        <div class="inputBox">
+                            <input type="password" name="password" class="password" placeholder="" required>
+                            <label for="password">Password</label>
+                        </div>
+                
+                        <button type="submit" class="submitButton">Log In</button>
+                    </form>
+                    
+                    <div class="forget">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                
+                    <div class="Login_Register">
+                        <a href="#">Create an account</a>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <!-- Header -->
+
+        <div id="overlay" class="hidden"></div>
+
+        <main class="event-main">
+            <section class="event-header">
+                <div class="event-details">
+                    <% if (event) { %>
+                    <h2 class="event-name alatsi-regular"><%= event.Description %></h2>
+                    <div class="event-date-address-wrapper">
+                        <div class="event-date-address-wrapper-container">
+                            <p class="text alatsi-regular">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <%= event.StartDate %>
+                            </p>
+                        </div>
+                        <div class="event-date-address-wrapper-container">
+                            <p class="text alatsi-regular">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <%= event.Address %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr class="event-details-line">
+                    <div class="book-ticket-btn-container">
+                        <button class="book-ticket-btn">Đặt ngay</button>
+                        <span class="remaining-ticket alatsi-regular">Chỉ còn 100 vé</span>
+                    </div>
+                </div>
+                
+                <div class="event-container">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="" class="event-banner">
+                </div>
+            </section>
+
+            <section class="introduction mt-32">
+                <h3 class="event-heading-title">Thông tin sự kiện</h3>
+                <p class="intro-text"><%= event.Description %></p>
+            </section>
+            <% } %>
+            <section class="introduction mt-32">
+                <h3 class="event-heading-title">Ban tổ chức</h3>
+                <p class="organizer-text"></p>
+            </section>
+        </main>
+        <footer class="footer">
+    
+        </footer>
+
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>

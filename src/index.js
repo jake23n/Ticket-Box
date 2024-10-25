@@ -7,6 +7,7 @@ import cartRouter from './routes/cart.route.js';
 import configViewEngine from './config/viewEngine.js';
 import dotenv from 'dotenv';
 import loginRouter from './routes/login.route.js'; 
+import eventRouter from './routes/event.route.js';
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ configViewEngine(app);
 app.use('/', homeRouter);
 app.use('/cart', cartRouter);
 app.use('/login', loginRouter); // Add the auth routes
+app.use('/event', eventRouter); // Add event detail routes
 
 // Start the server
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
