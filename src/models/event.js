@@ -19,9 +19,11 @@ const eventSchema = new mongoose.Schema({
     },
     VisitCount: {
         type: Number,
+        required: true,
     },
     Category: {
         type: String,
+        required: true
     },
     Status: {
         type: String,
@@ -34,8 +36,17 @@ const eventSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    Name: {
+        type: String,
+        required: true,
+    },
+    Banner: {
+        type: String,
+        required: true,
+    },
 });
 
-const Event = mongoose.model('events', eventSchema);
+const Event = mongoose.model('Event', eventSchema, 'Event'); 
+// Mongoose tự động thêm s vào tên collection nên phải thêm biến thứ 3 để xác nhận tên
 
 export default Event;

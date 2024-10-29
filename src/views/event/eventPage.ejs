@@ -34,7 +34,7 @@
                    
             </div>
             <!-- Che di nav bar -->
-            <nav id ="navbar" class="hidden-for-event">
+            <nav id ="navbar" class="hidden">
                 <button  class="navbar__item">Home</button>
                 <button  class="navbar__item">Music</button>
                 <button  class="navbar__item">Performance & Art</button>
@@ -75,13 +75,13 @@
         <main class="event-main">
             <section class="event-header">
                 <div class="event-details">
-                    <% if (event) { %>
-                    <h2 class="event-name alatsi-regular"><%= event.Description %></h2>
+            <% if (event) { %>
+                    <h2 class="event-name alatsi-regular"><%= event.Name %></h2>
                     <div class="event-date-address-wrapper">
                         <div class="event-date-address-wrapper-container">
                             <p class="text alatsi-regular">
                                 <span class="material-symbols-outlined">calendar_today</span>
-                                <%= event.StartDate %>
+                                <%= event.StartDate.toLocaleDateString('vi-VN') + ' ' + event.StartDate.toLocaleTimeString('vi-VN') %>
                             </p>
                         </div>
                         <div class="event-date-address-wrapper-container">
@@ -94,13 +94,13 @@
 
                     <hr class="event-details-line">
                     <div class="book-ticket-btn-container">
-                        <button class="book-ticket-btn">Đặt ngay</button>
+                        <a href="/booking"><button class="book-ticket-btn">Đặt ngay</button></a>
                         <span class="remaining-ticket alatsi-regular">Chỉ còn 100 vé</span>
                     </div>
                 </div>
                 
                 <div class="event-container">
-                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="" class="event-banner">
+                    <img src="<%= event.Banner %>" alt="" class="event-banner">
                 </div>
             </section>
 

@@ -37,6 +37,10 @@ html {
     display: none;
 }
 
+#navbar.hidden {
+    display: none;
+}
+
 /* css for html page */
 .event-main {
     margin: 0 8px;
