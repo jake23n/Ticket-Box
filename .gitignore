@@ -1,11 +1,7 @@
 node_modules
-.idea
 .env
-package.txt
 theory.txt
-DB_template.txt
 ProductBacklog.txt
 roadmap.txt
-yarn.lock
 others
 .vscode

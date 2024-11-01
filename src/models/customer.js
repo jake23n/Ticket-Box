@@ -1,20 +1,20 @@
 import mongoose from 'mongoose';
 
 const customerSchema = new mongoose.Schema({
-    customer_id: {
+    customerID: {
         type: String,
         required: true,
         unique: true
     },
-    customer_name: {
+    fullname: {
         type: String,
         required: true,
     },
-    customer_dob: {
+    DOB: {
         type: Date,
         required: true,
     },
-    customer_gender: {
+    gender: {
         type: String,
         required: true,
     },
@@ -22,20 +22,20 @@ const customerSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    customer_address: {
+    address: {
         type: String,
         required: true,
     },
-    customer_email: {
+    email: {
         type: String,
         required: true,
         unique: true
     },
-    customer_phone: {
+    phone: {
         type: String,
         required: true,
     },
-    customer_password: {
+    password: {
         type: String,
         required: true,
     }
