@@ -27,16 +27,14 @@ router.post('/', async (req, res) => {
         return res.status(400).send('Invalid username or password');
     }
 
-    const token = jwt.sign({ customerId: Customer.customerID }, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
-    res.json({ token }); // Gửi token về client
+    // const token = jwt.sign({ customerId: User.customerID }, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
+    // res.json({ token }); // Gửi token về client
 
 
     // Thiết lập phiên làm việc
     req.session.customer_id = customer._id;
     res.send('Logged in successfully');
 
-    console.log("http:" + username + ":" + password)
-    console.log("customer:" + customer.email + ":" + customer.password)
 });
 
 export default router;
