@@ -1,0 +1,7 @@
+node_modules
+.env
+theory.txt
+ProductBacklog.txt
+roadmap.txt
+others
+.vscode
