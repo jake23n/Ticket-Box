@@ -8,7 +8,7 @@ let connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbCon
 if(dbConfig.host === 'localhost'){
      connectString = 'mongodb://localhost:27017/TicketZEN'
 }
-
+console.log(connectString)
 // TODO: Singleton pattern
 class Database {
 
