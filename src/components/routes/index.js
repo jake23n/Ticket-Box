@@ -12,12 +12,16 @@ import getAbout from '../controllers/about.controller.js';
 import getContact from '../controllers/contact.controller.js';
 import getProduct from '../controllers/product.controller.js';
 import getDetail from '../controllers/detail.controller.js';
-
+import routerProfile from './profile/index.js';
 router.get('/', getHomepage)
 router.get('/about', getAbout)
 router.get('/contact', getContact)
 router.get('/product', getProduct)
 router.get('/detail', getDetail)
+router.use('/', routerProfile)
+
+
+
 router.use('/', accessRoutes);
 
 export default router

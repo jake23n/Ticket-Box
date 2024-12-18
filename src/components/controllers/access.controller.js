@@ -10,19 +10,23 @@ class AccessController {
   async getSignUp(req, res){
     res.render('signup', { errorMessage: null })
   }
+
   // TODO: API login
   async login(req, res, next) {
-    // try {
+    try {
       const metadata = await accessService.login(req.body);
-      // if(metadata && metadata.customer && metadata.tokens){
-        req.session.customer = metadata.customer; // Store user in session
+      if (metadata) {
+        req.session.customer = metadata.customer;
         req.session.tokens = metadata.tokens;
-        res.redirect('/');
-      // }
-    // } catch (error) {
-    //   res.render('login', { errorMessage: null });
-    // }
+        return res.redirect('/');
+      } else {
+        return res.render('login', { errorMessage: 'Login failed. Please try again.' });
+      }
+    } catch (error) {
+      return res.render('login', { errorMessage: 'An error occurred. Please try again.' });
+    }
   }
+
 
   // TODO: API signup
   async signUp(req, res, next) {
@@ -43,29 +47,31 @@ class AccessController {
 
   // TODO: API logout
   async logout(req, res, next) {
-    new OkResponse({
-      message: 'Logout successfully',
-      metadata: await accessService.logout(req.keyStore) // keyStore is from middleware authentication
-    }).send(res)
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).send('Could not log out.');
+      }
+      res.redirect('/login');  // Redirect to login page after logging out
+    });
   }
 
   // TODO: API refresh token
-  async refreshToken(req, res, next) {
-    // new OkResponse({
-    //   message: 'Refresh token successfully',
-    //   metadata: await accessService.refreshToken(req.body)
-    // }).send(res)
-
-    // TODO: v2 optimize
-    new OkResponse({
-      message: 'Refresh token successfully',
-      metadata: await accessService.refreshTokenV2({
-        refreshToken: req.refreshToken,
-        user: req.user,
-        keyStore: req.keyStore
-      }) // middleware authenticationV2
-    }).send(res)
-  }
+  // async refreshToken(req, res, next) {
+  //   // new OkResponse({
+  //   //   message: 'Refresh token successfully',
+  //   //   metadata: await accessService.refreshToken(req.body)
+  //   // }).send(res)
+  //
+  //   // TODO: v2 optimize
+  //   new OkResponse({
+  //     message: 'Refresh token successfully',
+  //     metadata: await accessService.refreshTokenV2({
+  //       refreshToken: req.refreshToken,
+  //       user: req.user,
+  //       keyStore: req.keyStore
+  //     }) // middleware authenticationV2
+  //   }).send(res)
+  // }
 }
 
 export default new AccessController()

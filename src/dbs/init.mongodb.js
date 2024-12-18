@@ -3,9 +3,12 @@
 import mongoose from 'mongoose'
 import config from '../configs/enviroment.config.js';
 const dbConfig = config.db;
-// const connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority`
 
-const connectString = 'mongodb://localhost:27017/TicketZEN'
+let connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority`
+if(dbConfig.host === 'localhost'){
+     connectString = 'mongodb://localhost:27017/TicketZEN'
+}
+
 // TODO: Singleton pattern
 class Database {
 
