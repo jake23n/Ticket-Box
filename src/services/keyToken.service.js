@@ -1,7 +1,7 @@
 import { Types } from 'mongoose'; // Import Types from mongoose
-const { ObjectId } = Types; // Destructure ObjectId from Types
+import keyTokenModel from "../models/keyToken.model.js"; // Import the keyToken model
 
-import keyTokenModel from "../components/models/keyToken.model.js"; // Import the keyToken model
+const { ObjectId } = Types; // Destructure ObjectId from Types
 
 class KeyTokenService {
   static async createKeyToken({ userId, publicKey, privateKey, refreshToken }) {

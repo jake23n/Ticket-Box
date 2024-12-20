@@ -2,33 +2,31 @@
 
 // TODO: External modules
 import bcrypt from 'bcrypt';
-
 // TODO: Internal modules
-import customerModel from '../components/models/customer.model.js';
+import customerModel from '../models/customer.model.js';
 import KeyTokenService from './keytoken.service.js';
 // Importing from auth.js
 import { createTokenPair, verifyJWT } from '../middlewares/auth.js';
-
 import { getObjectData, getRandomString } from '../utils/index.js';
-
 import ErrorResponses from '../core/error.response.js';
+import customerService from './customer.service.js';
 
 const { NotFoundRequest, BadRequest, UnauthorizedRequest, ForbiddenRequest } = ErrorResponses;
-
-import customerService from './customer.service.js';
 
 const SALTY_ROUNDS = 10;
 
 const validatePassword = (password) => {
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  if (!passwordRegex.test(password)) {
-    throw new BadRequest('Password must contain at least one uppercase letter, one number, and one special character.');
-  }
+  // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  // regex không hoạt động
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  // if (!passwordRegex.test(password)) {
+  //   throw new BadRequest('Password must contain at least one uppercase letter, one number, and one special character.');
+  // }
   return true;
 };
 class AccessService {
 
-  static async login({ email, password, refreshToken = null }) {
+  static async login({ email, password }) {
     // TODO: Step 1: Check email is existed
     const foundCustomer = await customerService.findByEmail({ email })
     if (!foundCustomer) {
@@ -49,7 +47,7 @@ class AccessService {
       userId: foundCustomer._id,
       email: foundCustomer.email,
     }
-    const tokens = await createTokenPair(tokenPayload, publicKey, privateKey)
+    const tokens = createTokenPair(tokenPayload, publicKey, privateKey)
 
     // TODO: Step 4: Save key token
     await KeyTokenService.createKeyToken({
@@ -101,7 +99,7 @@ class AccessService {
           email: newCustomer.email,
         };
 
-        tokens = await createTokenPair(tokenPayload, publicKey, privateKey);
+        tokens = createTokenPair(tokenPayload, publicKey, privateKey);
 
         // Step 3.3: Save key token in database
         const keyStore = await KeyTokenService.createKeyToken({

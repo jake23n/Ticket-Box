@@ -5,7 +5,8 @@ import config from '../configs/enviroment.config.js';
 const dbConfig = config.db;
 // const connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority`
 
-const connectString = 'mongodb://localhost:27017/TicketZEN'
+// const connectString = 'mongodb://localhost:27017/TicketZEN'
+const connectString = process.env.MONGODB_URL || 'mongodb://localhost:27017/TicketZEN'
 // TODO: Singleton pattern
 class Database {
 
