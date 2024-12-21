@@ -25,5 +25,5 @@ const pro = {
     },
 }
 const config = {dev, pro}
-const env = process.env.NODE_ENV || 'dev'
+const env = process.env.NODE_ENV || 'pro'
 export default config[env]

@@ -39,8 +39,9 @@ const authentication = forwardError(async (req, res, next) => {
    */
 
   // TODO: Step 1: Check userId and accessToken is existed
-  const userId = req.headers[HEADERS.CLIENT_ID]
-  const accessToken = req.headers[HEADERS.AUTHORIZATION]
+
+  const userId = req.session.customer._id
+  const accessToken = req.session.tokens.accessToken
 
   if (!userId || !accessToken) {
     throw new UnauthorizedRequest('Invalid Request')

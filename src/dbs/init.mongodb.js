@@ -1,15 +1,14 @@
 'use strict'
 
-import mongoose, { connect } from 'mongoose'
+import mongoose from 'mongoose'
 import config from '../configs/enviroment.config.js';
-import dotenv from "dotenv"
 const dbConfig = config.db;
-// const connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority`
 
-// const connectString = 'mongodb://localhost:27017/TicketZEN'
-
-const connectString = process.env.MONGODB_URL
-
+let connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority&appName=TicketBoxCluster`
+if(dbConfig.host === 'localhost'){
+     connectString = 'mongodb://localhost:27017/TicketZEN'
+}
+console.log(connectString)
 // TODO: Singleton pattern
 class Database {
 
