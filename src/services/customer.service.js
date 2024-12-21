@@ -1,4 +1,4 @@
-import customerModel  from "../components/models/customer.model.js";
+import customerModel  from "../models/customer.model.js";
 
 class CustomerService {
     static async findByEmail({ email, select = { email: 1, password: 1, name: 1 } }) {

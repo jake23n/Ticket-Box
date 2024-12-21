@@ -1,14 +1,15 @@
 'use strict'
 import JWT from 'jsonwebtoken';  // Importing the 'jsonwebtoken' package
 import headerConfig from "../constants/header.config.js";
+import KeyTokenService from '../services/keytoken.service.js';  // Importing the key token service
+import ErrorResponses from "../core/error.response.js";  // Default import
+import forwardError from '../utils/forwardError.js';  // Importing forwardError utility
 
 // Access the HEADERS from the imported object
 const { HEADERS } = headerConfig;
-import KeyTokenService from '../services/keytoken.service.js';  // Importing the key token service
-import ErrorResponses from "../core/error.response.js";  // Default import
+
 const { NotFoundRequest, UnauthorizedRequest } = ErrorResponses;  // Destructure from the imported object
 
-import forwardError from '../utils/forwardError.js';  // Importing forwardError utility
 
 const createTokenPair = (payload, publicKey, privateKey) => {
 

@@ -1,22 +1,19 @@
 // main.js or app.js
 import express from 'express';
 import configViewEngine from './configs/viewEngine.js';
-import indexRoutes from './components/routes/index.js';
-import accessController  from './components/controllers/access.controller.js';
-import  ErrorResponse from './core/error.response.js'; // Import các lớp ErrorResponse nếu bạn đã định nghĩa
+import indexRoutes from './routes/index.js';
+import('./dbs/init.mongodb.js')
+import accessController  from './controllers/access.controller.js';
 
 
-const app = express();
+const app = express()
 
 // Connect to MongoDB
-import ('./dbs/init.mongodb.js')
-
 
 // Middlewares
 
 // View engine
 configViewEngine(app);
-// Routes
 app.use(indexRoutes)
 app.get('/logout', (req, res) => {
     accessController.logout(req, res);
@@ -45,4 +42,3 @@ app.get('/logout', (req, res) => {
 // Start the server
 
 export default app
-
