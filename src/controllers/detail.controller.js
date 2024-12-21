@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import event from '../models/event.model.js'
-import MongooseToObjectFunctions from '../../utils/mongooseToObjectFunctions.js';
+import MongooseToObjectFunctions from '../utils/mongooseToObjectFunctions.js';
 class EventDetailController {
     getEventDetail = async (req, res, next) => {
         await event.findOne({ _id: req.params.id })
