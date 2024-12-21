@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import config from '../configs/enviroment.config.js';
 const dbConfig = config.db;
 
-let connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority`
+let connectString = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}/${dbConfig.name}?retryWrites=true&w=majority&appName=TicketBoxCluster`
 if(dbConfig.host === 'localhost'){
      connectString = 'mongodb://localhost:27017/TicketZEN'
 }
